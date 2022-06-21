@@ -21,8 +21,21 @@ export function Post() {
           <p>✓ MSC Ocean and Earth Dynamics </p>
           <p>✓ Full Stack Web Developer </p>
           <p>✓ Learning React </p>
+          <p>New Project </p>{' '}
+          <p><a href="operantar.live">Dados Operantar</a></p>{' '}
+          <p><a href="">#antartica</a></p>{' '}
+          <p><a href="">#operantarxl</a></p>
       </div>
 
+      <form className={styles.commentForm}>
+        <strong> Deixe seu feedback</strong>
+        <textarea 
+          placeholder="Deixe um comentário"
+        />
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>        
+      </form>
     </article>
   )
 }
