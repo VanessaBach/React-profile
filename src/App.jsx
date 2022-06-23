@@ -5,6 +5,43 @@ import { Sidebar } from './components/Sidebar';
 import styles from './App.module.css';
 import './global.css';
 
+
+// author: { avatar_url:"",  name:"", role:""}
+// publishedAt: Date
+// content: String
+
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://github.com/VanessaBach.png',
+      name: 'Vanessa Bach',
+      role: 'Web Developer'
+    },
+    content: [          
+      {type: 'paragraph', content: 'My name is Vanessa.'},
+      {type: 'paragraph', content: 'I am Full Stack Web Dev.'},
+      {type: 'link', content: 'operantar.live'},    
+    ],
+    publishedAt: new Date('2022-05-03 20:00:00')
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: 'https://github.com/soutobias.png',
+      name: 'Tobias',
+      role: 'Data Scientist'
+    },
+    content: [          
+      {type: 'paragraph', content: 'My name is Tobias.'},
+      {type: 'paragraph', content: 'I am Data Scientist.'},
+      {type: 'link', content: 'operantar.live'},    
+    ],
+    publishedAt: new Date('2022-06-20 20:00:00')
+  },
+];
+
+
 export function App() {
   return (
     <div>
@@ -13,14 +50,15 @@ export function App() {
       <div className={styles.wrapper}>
           <Sidebar />
           <main>
-            <Post 
-              author="Diego"
-              content="xxxxxx"
-            />
-            <Post 
-              author="Gabrieo"
-              content="yyyyy"
-            />
+            {posts.map(post => {
+              return (
+                <Post
+                  author={post.author}
+                  content={post.content}
+                  publishedAt={post.publishedAt}
+                />
+              )
+            })}
           </main>
       </div>
     </div>
