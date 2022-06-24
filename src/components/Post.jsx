@@ -30,7 +30,7 @@ export function Post({author, publishedAt, content}) {
   }
 
   function handleNewCommentChange() {
-    event.target.setCustomValidity(' ');
+    event.target.setCustomValidity('');
     setNewCommentText(event.target.value);
   }
 
