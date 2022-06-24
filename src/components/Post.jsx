@@ -11,7 +11,7 @@ export function Post({author, publishedAt, content}) {
   const [comments, setComments] = useState([
     'Post muito bacana!'
   ] )
-  const [newCommentText, setNewCommentText] =useState(' ')
+  const [newCommentText, setNewCommentText] =useState('')
 
   const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,
@@ -26,7 +26,7 @@ export function Post({author, publishedAt, content}) {
     event.preventDefault()
 
     setComments([...comments, newCommentText]);    
-    setNewCommentText(' ');
+    setNewCommentText('');
   }
 
   function handleNewCommentChange() {
